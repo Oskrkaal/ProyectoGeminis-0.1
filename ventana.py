@@ -8,14 +8,17 @@ class Ventana(Frame):
         super().__init__()
 
         self.initUI()
+        self.CentrarVentana()
 
 
     def initUI(self):
 
         self.master.title("Bienvenido a Geminis-0.1")
         self.pack(fill=BOTH, expand=1)
+        #self.master.geometry(0,0)
         self.CentrarVentana()
         self.Login()
+       
 
 
     def CentrarVentana(self):
@@ -29,21 +32,25 @@ class Ventana(Frame):
         x = (sw - w)/2
         y = (sh - h)/2
         self.master.geometry('%dx%d+%d+%d' % (w, h, x, y))
+        self.master.resizable(False,False)
+        
 
     def Login(self):
 
-        usuario = Label(self, text="Usuario")
-        usuario.pack()
-        usuarioEntrada = Entry(self)
-        usuarioEntrada.pack()
+        self.usuario = Label(self, text="Usuario", bd=5,bg="green", fg="white", font=("Rekha", 15, "bold"))
+        self.usuario.grid(row=0,column=0, pady=15)
 
-        password = Label(self,text="Password")
-        password.pack()
-        passwordEntrada= Entry(self)
-        passwordEntrada.pack()
+        self.usuarioEntrada = Entry(self,bg="white", fg="black",font=("Rekha", 15, "bold"))
+        self.usuarioEntrada.grid(row=0,column=1, pady=15, padx=5, sticky="w")
 
-        botonEntrar = Button(self, text="Ingresar")
-        botonEntrar.pack()
+        self.password = Label(self,text="Password", bd=5,bg="green", fg="white", font=("Rekha", 15, "bold"))
+        self.password.grid(row=1,column=0, pady=15)
+    
+        self.passwordEntrada= Entry(self,bg="white", fg="black",font=("Rekha", 15, "bold"))
+        self.passwordEntrada.grid(row=1,column=1, pady=15, padx=5, sticky="w")
+
+        self.botonEntrar = Button(self, text="Ingresar", bd=5,bg="green", fg="white", font=("Rekha", 15, "bold"))
+        self.botonEntrar.grid(row=3, column=0)
 
 
 def main():
