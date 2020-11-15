@@ -49,7 +49,7 @@ class Ventana(Frame):
         self.passwordEntrada= Entry(self,bg="white", fg="black",font=("Rekha", 15, "bold"))
         self.passwordEntrada.grid(row=1,column=1, pady=15, padx=5, sticky="w")
 
-        self.botonEntrar = Button(self, text="Ingresar", fg="white", font=("Rekha", 10, "bold"), anchor="center", relief="flat", borderwidth=5, activebackground="cyan2")
+        self.botonEntrar = Button(self, text="Ingresar", fg="white", font=("Rekha", 10, "bold"), anchor="center", relief="flat", activebackground="cyan2")
         self.botonEntrar.grid(row=2, column=0)
 
 
